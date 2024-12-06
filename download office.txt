@@ -1,0 +1,37 @@
+Link guida:
+https://gravesoft.dev/office_c2r_custom
+
+Attiva amministratore (opzionale)
+net user Administrator /active:yes
+net user Administrator ScegliPassword
+
+Scarica il setup (comunque in allegato)
+https://officecdn.microsoft.com/pr/wsus/setup.exe
+
+Scarica la configurazione (scegli le app da installare e poi fai esporta configurazione)
+https://config.office.com/deploymentsettings
+
+Crea una cartella office:
+mkdir C:\Office
+
+Copia setup e configurazione dentro office:
+copy .\setup.exe C:\Office\
+copy .\Configurazione.xml C:\Office\
+
+Apri un cmd come amministratore (funziona anche tasto destro, esegui come amministratore):
+runas /user:administrator cmd
+
+Fai partire il setup (dandogli come parametro la configurazione scaricata):
+cd C:\Office
+.\setup.exe /configure .\Configurazione.xml
+
+Ora dovrebbe partire il download
+
+Ora attiviamo la licenza, apri powershell ed esegui questi comandi:
+irm https://get.activated.win | iex
+2
+1
+
+Per attivare Windows, apri powershell ed esegui questi comandi:
+irm https://get.activated.win | iex
+1
